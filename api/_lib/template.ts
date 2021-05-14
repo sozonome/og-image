@@ -65,6 +65,12 @@ function getCss(theme: string, fontSize: string) {
         content: '\`';
     }
 
+    .wrapper {
+        display: flex;
+        grid-gap: 1.25rem;
+        align-items: center;
+    }
+
     .logo-wrapper {
         display: flex;
         align-items: center;
@@ -114,14 +120,12 @@ export function getHtml(parsedReq: ParsedRequest) {
         ${getCss(theme, fontSize)}
     </style>
     <body>
-        <div>
-            <div class="spacer">
+        <div class="wrapper spacer">
             <div class="logo-wrapper">
                 ${images.map((img, i) =>
                     getPlusSign(i) + getImage(img, widths[i], heights[i])
                 ).join('')}
             </div>
-            <div class="spacer">
             <div class="heading">${emojify(
                 md ? marked(text) : sanitizeHtml(text)
             )}
