@@ -49,7 +49,6 @@ function getCss(theme: string, fontSize: string) {
         background-size: 100px 100px;
         height: 100vh;
         display: flex;
-        text-align: center;
         align-items: center;
         justify-content: center;
     }
